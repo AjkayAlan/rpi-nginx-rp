@@ -1,5 +1,5 @@
-# Shouldn't really be doing from latest tag, but whatever
-FROM resin/rpi-raspbian:latest
+# Newer jessie images are busted
+FROM resin/rpi-raspbian:jessie-20160831
 MAINTAINER github.com/AjkayAlan
 
 #Update package lists, install nginx, and cleanup
@@ -13,7 +13,7 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log \
     && ln -sf /dev/stderr /var/log/nginx/error.log
 
 #Use personal config
-COPY nginx.conf /etc/nginx/
+COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose ports
 EXPOSE 80 443
