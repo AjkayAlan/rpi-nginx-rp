@@ -19,4 +19,4 @@ First, build a network for anything you want to have reverse proxied:
 
 Then you can run this on that network. Note that this has to be the only thing on port 80/443:
 
-`docker run --name rpi-nginx-rp --net rp -d -p 80:80 -p 443:443 ajkayalan/rpi-nginx-rp:latest`
+`docker run --name rpi-nginx-rp --net rp --restart always -d -p 80:80 -p 443:443 ajkayalan/rpi-nginx-rp:latest`
